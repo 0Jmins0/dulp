@@ -1,1 +1,13 @@
-
+.container { background: var(--light-bg); min-height: 100vh; }
+.order-card { background: var(--white); border-radius: 16rpx; margin: 30rpx; padding: 30rpx; box-shadow: 0 2rpx 8rpx rgba(76,175,80,0.04);}
+.order-status { color: var(--brand-green); font-size: 32rpx; font-weight: bold; margin-bottom: 20rpx;}
+.order-info text { display: block; color: var(--secondary-text); margin-bottom: 8rpx;}
+.goods-list { margin: 20rpx 0;}
+.goods-item { display: flex; align-items: center; margin-bottom: 16rpx;}
+.goods-img { width: 60rpx; height: 60rpx; border-radius: 8rpx; margin-right: 16rpx; object-fit: cover;}
+.goods-info { flex: 1;}
+.goods-name { color: var(--main-text); font-size: 28rpx;}
+.goods-count { color: var(--secondary-text); font-size: 24rpx; margin-left: 8rpx;}
+.goods-price { color: var(--brand-green); font-size: 28rpx; font-weight: bold;}
+.order-total { display: flex; justify-content: space-between; align-items: center; font-size: 32rpx; font-weight: bold; color: var(--main-text);}
+.total-price { color: var(--brand-green);}

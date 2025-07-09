@@ -1,7 +1,20 @@
+/* 首页配色重构：白绿主色调 */
+:root {
+  --brand-green: #4CAF50;
+  --dark-green: #2E7D32;
+  --main-text: #212121;
+  --secondary-text: #757575;
+  --disabled-text: #BDBDBD;
+  --divider: #EEEEEE;
+  --light-bg: #F5F5F5;
+  --active-bg: #E8F5E9;
+  --white: #FFFFFF;
+}
+
 /* 容器样式 */
 .container {
   min-height: 100vh;
-  background: #ffffff;
+  background: var(--white);
   padding: 40rpx 30rpx;
   box-sizing: border-box;
 }
@@ -109,10 +122,11 @@
 /* 主要功能卡片 */
 .main-card {
   flex: 1;
-  background: #ffffff;
-  border-radius: 20rpx;
+  background: var(--light-bg);
+  border-radius: 24rpx;
   padding: 40rpx 30rpx;
-  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2rpx 8rpx rgba(76,175,80,0.04);
+  border: 2rpx solid var(--divider);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,20 +286,20 @@
 .main-text {
   display: block;
   font-size: 32rpx;
-  font-weight: 600;
-  color: #0f3460;
+  font-weight: bold;
+  color: var(--main-text);
   margin-bottom: 8rpx;
 }
 
 .sub-text {
   display: block;
   font-size: 22rpx;
-  color: #666666;
+  color: var(--secondary-text);
 }
 
 /* 功能卡片 */
 .function-card {
-  background: #ffffff;
+  background: var(--white);
   border-radius: 20rpx;
   overflow: hidden;
   box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
@@ -298,6 +312,10 @@
   padding: 30rpx;
   border-bottom: 1rpx solid #f0f0f0;
   transition: background-color 0.3s ease;
+  background: var(--light-bg);
+  color: var(--main-text);
+  border-radius: 16rpx;
+  border: 2rpx solid var(--divider);
 }
 
 .function-section:last-child {
@@ -305,7 +323,8 @@
 }
 
 .function-section:active {
-  background-color: #f8f9fa;
+  background: var(--active-bg);
+  border: 2rpx solid var(--brand-green);
 }
 
 /* 功能图标 */
@@ -372,4 +391,17 @@
   font-size: 28rpx;
   color: #0f3460;
   font-weight: 500;
+}
+
+/* 按钮、选中、禁用等 */
+button, .button {
+  background: var(--brand-green);
+  color: var(--white);
+  border-radius: 32rpx;
+  font-weight: bold;
+  border: none;
+}
+button:disabled, .button:disabled {
+  background: var(--disabled-text);
+  color: var(--white);
 }
