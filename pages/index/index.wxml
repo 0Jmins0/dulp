@@ -1,0 +1,93 @@
+<view class="container">
+  <!-- 顶部人物插画 -->
+  <view class="illustration-container">
+    <view class="person-illustration">
+      <!-- 头部 -->
+      <view class="head"></view>
+      <!-- 帽子 -->
+      <view class="beanie"></view>
+      <!-- 连帽衫 -->
+      <view class="hoodie"></view>
+      <!-- 面部表情 -->
+      <view class="face">
+        <view class="eyes">
+          <view class="eye left-eye"></view>
+          <view class="eye right-eye"></view>
+        </view>
+        <view class="mouth"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 主要功能卡片 - 左右布局 -->
+  <view class="main-cards-container">
+    <!-- 外卖选项 -->
+    <view class="main-card takeout-card" bindtap="onTakeoutTap">
+      <view class="icon-container">
+        <view class="takeout-icon">
+          <view class="bag">
+            <view class="bag-opening"></view>
+            <view class="person-in-bag"></view>
+          </view>
+          <view class="radiating-lines">
+            <view class="line line1"></view>
+            <view class="line line2"></view>
+            <view class="line line3"></view>
+          </view>
+        </view>
+      </view>
+      <view class="text-content">
+        <text class="main-text">外卖</text>
+        <text class="sub-text">take-out food</text>
+      </view>
+    </view>
+
+    <!-- 门店自取选项 -->
+    <view class="main-card self-pickup-card" bindtap="onSelfPickupTap">
+      <view class="icon-container">
+        <view class="scooter-icon">
+          <view class="scooter">
+            <view class="scooter-body"></view>
+            <view class="scooter-wheel front-wheel"></view>
+            <view class="scooter-wheel back-wheel"></view>
+            <view class="person-on-scooter"></view>
+          </view>
+          <view class="radiating-lines">
+            <view class="line line1"></view>
+            <view class="line line2"></view>
+            <view class="line line3"></view>
+          </view>
+        </view>
+      </view>
+      <view class="text-content">
+        <text class="main-text">到店</text>
+        <text class="sub-text">Store self collection</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能卡片 -->
+  <view class="function-card">
+    <!-- 优惠券中心 -->
+    <view class="function-section coupon" bindtap="onCouponTap">
+      <view class="function-icon">
+        <view class="coupon-icon">
+          <view class="coupon-body"></view>
+          <text class="coupon-symbol">¥</text>
+        </view>
+      </view>
+      <text class="function-text">优惠券中心</text>
+    </view>
+
+    <!-- 个人中心 -->
+    <view class="function-section profile" bindtap="onProfileTap">
+      <view class="function-icon">
+        <view class="profile-icon">
+          <view class="profile-head"></view>
+          <view class="profile-shoulders"></view>
+        </view>
+      </view>
+      <text class="function-text">个人中心</text>
+    </view>
+  </view>
+</view>

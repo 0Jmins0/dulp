@@ -1,0 +1,56 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="top-nav">
+    <text class="nav-title">确认订单</text>
+  </view>
+  <!-- 收货地址 -->
+  <view class="address-card">
+    <view class="address-title">收货地址</view>
+    <view class="address-detail">
+      <text>{{address.name}} {{address.phone}}</text>
+      <text>{{address.detail}}</text>
+    </view>
+  </view>
+  <!-- 商品明细 -->
+  <view class="goods-card">
+    <view class="goods-title">商品明细</view>
+    <view wx:for="{{cartItems}}" wx:key="id" class="goods-item">
+      <image src="{{item.image}}" class="goods-img"></image>
+      <view class="goods-info">
+        <text class="goods-name">{{item.name}}</text>
+        <text class="goods-count">x{{item.count}}</text>
+      </view>
+      <text class="goods-price">¥{{item.price * item.count}}</text>
+    </view>
+  </view>
+  <!-- 优惠券 -->
+  <view class="coupon-card">
+    <text class="coupon-label">优惠券</text>
+    <text class="coupon-value">{{coupon ? coupon.name : '无可用'}}</text>
+  </view>
+  <!-- 备注 -->
+  <view class="remark-card">
+    <input class="remark-input" placeholder="备注（如口味、配送要求等）" value="{{remark}}" bindinput="onRemarkInput" />
+  </view>
+  <!-- 价格明细 -->
+  <view class="price-detail">
+    <view class="price-item">
+      <text class="price-label">商品总价</text>
+      <text class="price-value">¥{{totalPrice}}</text>
+    </view>
+    <view class="price-item">
+      <text class="price-label">包装费</text>
+      <text class="price-value">¥{{packagingFee}}</text>
+    </view>
+    <view class="price-item" wx:if="{{discount > 0}}">
+      <text class="price-label">优惠券</text>
+      <text class="price-value discount">-¥{{discount}}</text>
+    </view>
+    <view class="price-item total">
+      <text class="price-label">实付金额</text>
+      <text class="price-value">¥{{finalPrice}}</text>
+    </view>
+  </view>
+  <!-- 提交订单按钮 -->
+  <view class="submit-btn" bindtap="submitOrder">提交订单</view>
+</view> 

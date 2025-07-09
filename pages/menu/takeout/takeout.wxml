@@ -1,0 +1,113 @@
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="top-nav">
+    <view class="nav-left" bindtap="goBack">
+      <text class="back-icon">‹</text>
+      <text class="nav-title">外卖点餐</text>
+    </view>
+    <view class="nav-right">
+      <text class="more-dots">⋯</text>
+      <view class="user-avatar"></view>
+    </view>
+  </view>
+  
+  <!-- 分隔线 -->
+  <view class="separator"></view>
+  
+  <!-- 公告区域 -->
+  <view class="announcement-section">
+    <view class="announcement-left">
+      <view class="announcement-icon">!</view>
+      <text class="announcement-text">商家暂无公告</text>
+    </view>
+    <text class="more-text">更多v</text>
+  </view>
+  
+  <!-- 主内容区域 -->
+  <view class="main-content">
+    <!-- 左侧分类菜单 -->
+    <view class="category-sidebar">
+      <scroll-view scroll-y="true" class="category-list">
+        <view 
+          wx:for="{{categories}}" 
+          wx:key="id"
+          class="category-item {{item.active ? 'active' : ''}}"
+          bindtap="switchCategory"
+          data-id="{{item.id}}"
+        >
+          <text class="category-icon">{{item.icon}}</text>
+          <text class="category-name">{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    
+    <!-- 右侧菜品列表 -->
+    <view class="dish-content">
+      <scroll-view scroll-y="true" class="dish-list">
+        <view 
+          wx:for="{{dishes}}" 
+          wx:key="id"
+          wx:if="{{item.categoryId === currentCategory}}"
+          class="dish-card"
+        >
+          <!-- 菜品图片 -->
+          <view class="dish-image">
+            <image src="{{item.image}}" mode="aspectFill" class="dish-img"></image>
+          </view>
+          
+          <!-- 菜品信息 -->
+          <view class="dish-info">
+            <!-- 菜品名称 -->
+            <text class="dish-name">{{item.name}}</text>
+            
+            <!-- 菜品描述 -->
+            <text class="dish-description">{{item.description}}</text>
+            
+            <!-- 销量信息 -->
+            <text class="dish-sales">销量{{item.sales}}</text>
+            
+            <!-- 价格和添加按钮 -->
+            <view class="dish-bottom">
+              <text class="dish-price">¥{{item.price}}</text>
+              
+              <!-- 数量控制 -->
+              <view class="quantity-control">
+                <view 
+                  wx:if="{{item.count > 0}}"
+                  class="quantity-btn minus-btn" 
+                  bindtap="removeFromCart"
+                  data-id="{{item.id}}"
+                >-</view>
+                <text wx:if="{{item.count > 0}}" class="quantity-text">{{item.count}}</text>
+                <view 
+                  class="quantity-btn plus-btn" 
+                  bindtap="addToCart"
+                  data-id="{{item.id}}"
+                >+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  
+  <!-- 底部购物车栏 -->
+  <view class="bottom-cart-bar" wx:if="{{cart.length > 0}}">
+    <view class="cart-left">
+      <view class="location-icon">📍</view>
+      <view class="store-info">
+        <text class="store-name">{{storeInfo.name}}</text>
+        <text class="store-address">{{storeInfo.address}}</text>
+      </view>
+    </view>
+    
+    <view class="cart-right" bindtap="viewCart">
+      <text class="total-price">¥{{totalPrice}}</text>
+      <view class="cart-icon">
+        <text class="cart-bag">🛒</text>
+        <text class="cart-count">{{cart.length}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,89 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="top-nav">
+    <view class="nav-left" bindtap="goBack">
+      <text class="back-icon">‹</text>
+      <text class="nav-title">购物车</text>
+    </view>
+  </view>
+  
+  <!-- 购物车内容 -->
+  <view class="cart-content">
+    <view wx:if="{{cartItems.length === 0}}" class="empty-cart">
+      <text class="empty-text">购物车是空的</text>
+      <text class="empty-tip">快去选择美食吧</text>
+    </view>
+    
+    <view wx:else class="cart-list">
+      <view 
+        wx:for="{{cartItems}}" 
+        wx:key="id"
+        class="cart-item"
+      >
+        <!-- 商品图片 -->
+        <view class="item-image">
+          <image src="{{item.image}}" mode="aspectFill" class="item-img"></image>
+        </view>
+        
+        <!-- 商品信息 -->
+        <view class="item-info">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-price">¥{{item.price}}</text>
+        </view>
+        
+        <!-- 数量控制 -->
+        <view class="quantity-control">
+          <view 
+            class="quantity-btn minus-btn" 
+            bindtap="decreaseCount"
+            data-id="{{item.id}}"
+          >-</view>
+          <text class="quantity-text">{{item.count}}</text>
+          <view 
+            class="quantity-btn plus-btn" 
+            bindtap="increaseCount"
+            data-id="{{item.id}}"
+          >+</view>
+        </view>
+        
+        <!-- 删除按钮 -->
+        <view 
+          class="delete-btn" 
+          bindtap="removeItem"
+          data-id="{{item.id}}"
+        >×</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 价格明细 -->
+  <view class="price-detail" wx:if="{{cartItems.length > 0}}">
+    <view class="price-item">
+      <text class="price-label">商品总价</text>
+      <text class="price-value">¥{{totalPrice}}</text>
+    </view>
+    <view class="price-item">
+      <text class="price-label">包装费</text>
+      <text class="price-value">¥{{packagingFee}}</text>
+    </view>
+    <view class="price-item" wx:if="{{discount > 0}}">
+      <text class="price-label">优惠券</text>
+      <text class="price-value discount">-¥{{discount}}</text>
+    </view>
+    <view class="price-item total">
+      <text class="price-label">实付金额</text>
+      <text class="price-value">¥{{finalPrice}}</text>
+    </view>
+  </view>
+  
+  <!-- 底部结算栏 -->
+  <view class="bottom-checkout" wx:if="{{cartItems.length > 0}}">
+    <view class="checkout-left">
+      <text class="total-label">合计：</text>
+      <text class="total-price">¥{{finalPrice}}</text>
+    </view>
+    <view class="checkout-btn" bindtap="goToCheckout">
+      <text class="checkout-text">去结算</text>
+    </view>
+  </view>
+</view>

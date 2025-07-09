@@ -1,0 +1,375 @@
+/* 容器样式 */
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+}
+
+/* 人物插画容器 */
+.illustration-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60rpx;
+  padding-top: 40rpx;
+}
+
+/* 人物插画 */
+.person-illustration {
+  position: relative;
+  width: 200rpx;
+  height: 240rpx;
+}
+
+/* 头部 */
+.head {
+  position: absolute;
+  top: 80rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 80rpx;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 3rpx solid #0f3460;
+}
+
+/* 帽子 */
+.beanie {
+  position: absolute;
+  top: 60rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90rpx;
+  height: 40rpx;
+  background: #0f3460;
+  border-radius: 45rpx 45rpx 0 0;
+}
+
+/* 连帽衫 */
+.hoodie {
+  position: absolute;
+  top: 120rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120rpx;
+  height: 100rpx;
+  background: #0f3460;
+  border-radius: 60rpx 60rpx 20rpx 20rpx;
+}
+
+/* 面部表情 */
+.face {
+  position: absolute;
+  top: 80rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 眼睛 */
+.eyes {
+  position: absolute;
+  top: 25rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20rpx;
+}
+
+.eye {
+  width: 8rpx;
+  height: 8rpx;
+  background: #0f3460;
+  border-radius: 50%;
+}
+
+/* 嘴巴 */
+.mouth {
+  position: absolute;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20rpx;
+  height: 8rpx;
+  border: 2rpx solid #0f3460;
+  border-top: none;
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+/* 主要功能卡片容器 - 左右布局 */
+.main-cards-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  gap: 20rpx;
+}
+
+/* 主要功能卡片 */
+.main-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-card:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.15);
+}
+
+/* 图标容器 */
+.icon-container {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+/* 外卖图标 */
+.takeout-icon {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.bag {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  width: 60rpx;
+  height: 50rpx;
+  background: #0f3460;
+  border-radius: 8rpx;
+}
+
+.bag-opening {
+  position: absolute;
+  top: -5rpx;
+  left: 5rpx;
+  width: 50rpx;
+  height: 15rpx;
+  background: #0f3460;
+  border-radius: 8rpx 8rpx 0 0;
+}
+
+.person-in-bag {
+  position: absolute;
+  top: 15rpx;
+  left: 20rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* 辐射线条 */
+.radiating-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.line {
+  position: absolute;
+  background: #0f3460;
+  border-radius: 2rpx;
+  opacity: 0.6;
+}
+
+.line1 {
+  top: 10rpx;
+  right: 5rpx;
+  width: 15rpx;
+  height: 2rpx;
+  transform: rotate(45deg);
+}
+
+.line2 {
+  top: 20rpx;
+  right: 0;
+  width: 12rpx;
+  height: 2rpx;
+  transform: rotate(45deg);
+}
+
+.line3 {
+  top: 30rpx;
+  right: 5rpx;
+  width: 10rpx;
+  height: 2rpx;
+  transform: rotate(45deg);
+}
+
+/* 电动车图标 */
+.scooter-icon {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.scooter {
+  position: absolute;
+  top: 20rpx;
+  left: 10rpx;
+  width: 60rpx;
+  height: 40rpx;
+}
+
+.scooter-body {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  width: 40rpx;
+  height: 20rpx;
+  background: #0f3460;
+  border-radius: 10rpx;
+}
+
+.scooter-wheel {
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  background: #0f3460;
+  border-radius: 50%;
+  border: 2rpx solid #ffffff;
+}
+
+.front-wheel {
+  top: 25rpx;
+  left: 5rpx;
+}
+
+.back-wheel {
+  top: 25rpx;
+  right: 5rpx;
+}
+
+.person-on-scooter {
+  position: absolute;
+  top: 5rpx;
+  left: 25rpx;
+  width: 16rpx;
+  height: 16rpx;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* 文字内容 */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-text {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #0f3460;
+  margin-bottom: 8rpx;
+}
+
+.sub-text {
+  display: block;
+  font-size: 22rpx;
+  color: #666666;
+}
+
+/* 功能卡片 */
+.function-card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 功能区域 */
+.function-section {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.function-section:last-child {
+  border-bottom: none;
+}
+
+.function-section:active {
+  background-color: #f8f9fa;
+}
+
+/* 功能图标 */
+.function-icon {
+  margin-right: 20rpx;
+}
+
+/* 优惠券图标 */
+.coupon-icon {
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.coupon-body {
+  width: 40rpx;
+  height: 30rpx;
+  background: #0f3460;
+  border-radius: 6rpx;
+  border: 2rpx solid #ffffff;
+}
+
+.coupon-symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 个人中心图标 */
+.profile-icon {
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.profile-head {
+  position: absolute;
+  top: 5rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20rpx;
+  height: 20rpx;
+  background: #0f3460;
+  border-radius: 50%;
+}
+
+.profile-shoulders {
+  position: absolute;
+  bottom: 5rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30rpx;
+  height: 15rpx;
+  background: #0f3460;
+  border-radius: 15rpx 15rpx 0 0;
+}
+
+/* 功能文字 */
+.function-text {
+  font-size: 28rpx;
+  color: #0f3460;
+  font-weight: 500;
+}

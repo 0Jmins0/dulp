@@ -1,0 +1,10 @@
+@import '../cart/cart.wxss';
+
+.checkout-btn {
+  background: #ff6b35;
+  color: #fff;
+}
+
+.checkout-btn:active {
+  background: #ff8c42;
+} 
